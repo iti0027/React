@@ -13,7 +13,7 @@ function App (){
     <div style={{textAlign: "center", marginTop: "50px"}}>
     <h1>Jogue o Dado</h1>
     <Dado valor={valorDado} />
-    
+    <br/>
     <button onClick={rolarDado} style={{padding: "10px", fontSize: "16px", marginTop: "20px"}}> Jogar Dado </button>
     </div>
   );
