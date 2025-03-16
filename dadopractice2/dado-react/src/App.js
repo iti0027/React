@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Dado from "./components/Dado";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App (){
+  const [valorDado, setValorDado] = useState(1);
+
+  const rolarDado = () => {
+    const novoValor = Math.floor(Math.random() * 6) + 1;
+    setValorDado(novoValor);
+  };
+
+  return(
+    <div style={{textAlign: "center", marginTop: "50px"}}>
+    <h1>Jogue o Dado</h1>
+    <Dado valor={valorDado} />
+    
+    <button onClick={rolarDado} style={{padding: "10px", fontSize: "16px", marginTop: "20px"}}> Jogar Dado </button>
     </div>
   );
 }
